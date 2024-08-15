@@ -39,13 +39,13 @@ const SignUp = () => {
       await updateUserProfile(name, image_url);
       navigate("/");
       // 4. Prepare user info
-  const userInfo = {
-    name: name,
-    email: email,
-    photo: image_url,
-    role: 'user'
-};
-const res = await axiosCommon.put('/users', userInfo);
+//   const userInfo = {
+//     name: name,
+//     email: email,
+//     photo: image_url,
+//     role: 'user'
+// };
+// const res = await axiosCommon.put('/users', userInfo);
 
             Swal.fire({
           position: "top",
@@ -118,17 +118,17 @@ const res = await axiosCommon.put('/users', userInfo);
       const result = await googleSignIn();
       console.log(result.user);
 
-      // 2. Prepare user info
-      const userInfo = {
-        email: result?.user?.email,
-        name: result?.user?.displayName,
-        photo: result?.user?.photoURL,
-        role: "user",
-      };
+      // // 2. Prepare user info
+      // const userInfo = {
+      //   email: result?.user?.email,
+      //   name: result?.user?.displayName,
+      //   photo: result?.user?.photoURL,
+      //   role: "user",
+      // };
 
-      // 3. Update user info on the server
-      const res = await axiosCommon.put("/users", userInfo);
-      console.log(res.data);
+      // // 3. Update user info on the server
+      // const res = await axiosCommon.put("/users", userInfo);
+      // console.log(res.data);
 
       // 4. Show success message
       Swal.fire({
@@ -210,7 +210,7 @@ const res = await axiosCommon.put('/users', userInfo);
     >
       <Helmet>
         <link rel="shortcut icon" href={logo} type="image/x-icon" />
-        <title>SurveySeeker || SignUp</title>
+        <title>NextGenShop || SignUp</title>
       </Helmet>
 
       <div className="flex justify-center items-center min-h-screen">

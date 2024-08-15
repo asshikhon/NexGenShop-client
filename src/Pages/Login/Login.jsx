@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
@@ -26,17 +27,17 @@ const Login = () => {
       const result = await googleSignIn();
       console.log(result.user);
 
-      // 2. Prepare user info
-      const userInfo = {
-          email: result?.user?.email,
-          name: result?.user?.displayName,
-          photo: result?.user?.photoURL,
-          role: 'user',
-      };
+      // // 2. Prepare user info
+      // const userInfo = {
+      //     email: result?.user?.email,
+      //     name: result?.user?.displayName,
+      //     photo: result?.user?.photoURL,
+      //     role: 'user',
+      // };
 
-      // 3. Update user info on the server
-      const res = await axiosCommon.put('/users', userInfo);
-      console.log(res.data);
+      // // 3. Update user info on the server
+      // const res = await axiosCommon.put('/users', userInfo);
+      // console.log(res.data);
 
       // 4. Show success message
       Swal.fire({
@@ -179,7 +180,7 @@ const Login = () => {
     >
       <Helmet>
         <link rel="shortcut icon" href={logoLogin} type="image/x-icon" />
-        <title>SurveySeeker || Login</title>
+        <title>NextGenShop || Login</title>
       </Helmet>
 
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl text-gray-100">

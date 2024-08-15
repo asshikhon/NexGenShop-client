@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="px-4 divide-y bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-        <Link className="flex items-center gap-2">
+        <Link className="flex items-center">
           <img
             className="h-[80px] w-[70px] rounded-full"
             src={homeLogo}

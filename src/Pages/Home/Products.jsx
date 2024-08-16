@@ -12,6 +12,7 @@ const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [count, setCount] = useState(0);
   const [filter, setFilter] = useState("");
+  const [filter1, setFilter1] = useState("");
   const [sort, setSort] = useState("");
   const [search, setSearch] = useState("");
   const [searchText, setSearchText] = useState("");
@@ -23,10 +24,10 @@ const Products = () => {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ["surveys", currentPage, itemsPerPage, filter, sort, search],
+    queryKey: ["surveys", currentPage, itemsPerPage, filter,filter1, sort, search],
     queryFn: async () => {
       const { data } = await axiosCommon.get("/all-surveys", {
-        params: { page: currentPage, size: itemsPerPage, filter, sort, search },
+        params: { page: currentPage, size: itemsPerPage, filter,filter1, sort, search },
       });
       return data.surveys;
     },
@@ -34,10 +35,10 @@ const Products = () => {
 
   // Fetch count data
   const { data: countData } = useQuery({
-    queryKey: ["count", filter, search],
+    queryKey: ["count", filter,filter1, search],
     queryFn: async () => {
       const { data } = await axiosCommon.get("/products-count", {
-        params: { filter, search },
+        params: { filter,filter1, search },
       });
       return data.count;
     },
@@ -59,6 +60,7 @@ const Products = () => {
 
   const handleReset = () => {
     setFilter("");
+    setFilter1("");
     setSort("");
     setSearch("");
     setSearchText("");
@@ -79,6 +81,30 @@ const Products = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
           {/* Filter dropdown */}
+          {/* 1 filter */}
+          <div>
+            <select
+              onChange={(e) => {
+                setFilter1(e.target.value);
+                setCurrentPage(1);
+              }}
+              value={filter1}
+              name="brand_name"
+              id="brand_name"
+              className="border p-4 rounded-lg"
+            >
+              <option value="">Filter By Brand </option>
+           
+              <option value="Adidas">Adidas</option>
+              <option value="Apple">Apple</option>
+              <option value="Manduka">Manduka</option>
+              <option value="Nike">Nike</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Sony">Sony</option>
+           
+            </select>
+          </div>
+          {/* 2 filter */}
           <div>
             <select
               onChange={(e) => {
@@ -91,15 +117,16 @@ const Products = () => {
               className="border p-4 rounded-lg"
             >
               <option value="">Filter By Category</option>
-              <option value="Customer Satisfaction">
-                Customer Satisfaction
+           
+              <option value="Computers">Computers</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Shoes">
+              Shoes
               </option>
-              <option value="Employee Feedback">Employee Feedback</option>
-              <option value="Market Research">Market Research</option>
-              <option value="Product Feedback">Product Feedback</option>
-              <option value="Event Planning">Event Planning</option>
             </select>
           </div>
+
 
           {/* Search input */}
           <form onSubmit={handleSearch}>

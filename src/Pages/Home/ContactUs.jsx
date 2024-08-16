@@ -53,7 +53,7 @@ const ContactUs = () => {
     >
       <Helmet>
         <link rel="icon" type="image/svg+xml" href={logo} />
-        <title>SurveySeeker || ContactUs</title>
+        <title>NextGenShop || ContactUs</title>
       </Helmet>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md">

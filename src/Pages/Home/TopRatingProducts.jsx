@@ -46,7 +46,7 @@ console.log(topProducts);
     <div className="container mx-auto my-12 md:mt-16 lg:mt-24">
       <div className="text-center mb-12 ">
         <h2 className="text-5xl font-bold mb-4 text-[#3C6D71]">Top Rating Products</h2>
-        <p className="text-lg font-semibold w-[70%] text-center block mx-auto">
+        <p className="text-lg font-semibold w-[70%]  text-center block mx-auto">
         Uncover top-rated products chosen by real customers and experts, ensuring you get the best value for your money.
         </p>
       </div>

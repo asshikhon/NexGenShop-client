@@ -42,8 +42,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "text-base font-semibold border border-orange-500 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white"
-              : "text-base z-[1] hover:bg-[#23BE0A] hover:text-white"
+              ? "text-base font-semibold border border-[#3C6D71] rounded-lg text-[#3C6D71] hover:bg-[#3C6D71] hover:text-white"
+              : "text-base z-[1] hover:bg-[#126b58] hover:text-white"
           }
         >
           Home
@@ -55,8 +55,8 @@ const Navbar = () => {
           to="/products"
           className={({ isActive }) =>
             isActive
-              ? "text-base font-semibold border border-orange-500 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white"
-              : "text-base z-[1] hover:bg-[#23BE0A] hover:text-white"
+              ? "text-base font-semibold border border-[#3C6D71] rounded-lg text-[#3C6D71] hover:bg-[#3C6D71] hover:text-white"
+              : "text-base z-[1] hover:bg-[#126b58] hover:text-white"
           }
         >
          All Products
@@ -67,8 +67,8 @@ const Navbar = () => {
           to="/contact"
           className={({ isActive }) =>
             isActive
-              ? "text-base font-semibold border border-orange-500 rounded-lg text-orange-500 hover:bg-orange-500 hover:text-white"
-              : "text-base z-[1] hover:bg-[#23BE0A] hover:text-white"
+              ? "text-base font-semibold border border-[#3C6D71] rounded-lg text-[#3C6D71] hover:bg-[#3C6D71] hover:text-white"
+              : "text-base z-[1] hover:bg-[#126b58] hover:text-white"
           }
         >
           ContactUs
@@ -156,7 +156,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn bg-orange-500 btn-sm md:btn-md lg:text-lg lg:px-6 text-bold text-white "
+                className="btn bg-[#3C6D71] btn-sm md:btn-md lg:text-lg lg:px-6 text-bold text-white "
               >
                 Logout
               </button>
@@ -164,12 +164,12 @@ const Navbar = () => {
           ) : (
             <div className="flex flex-col md:flex-row gap-2">
               <Link to="/login">
-                <button className="btn bg-orange-500 btn-sm md:btn-md lg:text-lg md:px-4 lg:px-6 text-bold text-white ">
+                <button className="btn bg-[#3C6D71] btn-sm md:btn-md lg:text-lg md:px-4 lg:px-6 text-bold text-white ">
                   Login
                 </button>
               </Link>
               <Link to="/signup">
-                <button className="btn bg-orange-500 btn-sm md:btn-md lg:text-lg md:px-4 lg:px-6 text-bold text-white">
+                <button className="btn bg-[#3C6D71] btn-sm md:btn-md lg:text-lg md:px-4 lg:px-6 text-bold text-white">
                 SignUp
                 </button>
               </Link>

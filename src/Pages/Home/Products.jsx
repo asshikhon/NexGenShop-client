@@ -151,7 +151,7 @@ const Products = () => {
 
           {/* Search input */}
           <form onSubmit={handleSearch}>
-            <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-orange-400 focus-within:ring-orange-300">
+            <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-[#3C6D71] focus-within:ring-[#3C6D71]">
               <input
                 className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
                 type="text"
@@ -161,7 +161,7 @@ const Products = () => {
                 placeholder="Enter Products Title"
                 aria-label="Enter Products Title"
               />
-              <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-orange-500 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
+              <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#3C6D71] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
                 Search
               </button>
             </div>
@@ -189,13 +189,13 @@ const Products = () => {
           </div>
           <button
             onClick={handleReset}
-            className="btn  bg-orange-500 text-white"
+            className="btn  bg-[#3C6D71] text-white"
           >
             Reset
           </button>
           <button
             onClick={() => refetch()}
-            className="btn  bg-orange-500 text-white"
+            className="btn  bg-[#3C6D71] text-white"
           >
             Refresh
           </button>
@@ -286,7 +286,7 @@ const Products = () => {
         <button
           disabled={currentPage === 1}
           onClick={() => handlePaginationButton(currentPage - 1)}
-          className="px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-orange-500 hover:text-white"
+          className="px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-[#3C6D71] hover:text-white"
         >
           <div className="flex items-center -mx-1">
             <svg
@@ -312,8 +312,8 @@ const Products = () => {
             onClick={() => handlePaginationButton(btnNum)}
             key={btnNum}
             className={`hidden ${
-              currentPage === btnNum ? "bg-orange-500 text-white" : ""
-            } px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-orange-500 hover:text-white`}
+              currentPage === btnNum ? "bg-[#1a373a] text-white" : ""
+            } px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-[#3C6D71] hover:text-white`}
           >
             {btnNum}
           </button>
@@ -322,7 +322,7 @@ const Products = () => {
         <button
           disabled={currentPage === numberOfPages}
           onClick={() => handlePaginationButton(currentPage + 1)}
-          className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-orange-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
+          className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-[#3C6D71] disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
         >
           <div className="flex items-center -mx-1">
             <span className="mx-1">Next</span>

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
+ 
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";

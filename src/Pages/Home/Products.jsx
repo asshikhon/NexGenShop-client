@@ -16,33 +16,32 @@ const Products = () => {
   const [sort, setSort] = useState("");
   const [search, setSearch] = useState("");
   const [searchText, setSearchText] = useState("");
+  const [priceRange, setPriceRange] = useState("");
+
   const axiosCommon = useAxiosCommon();
 
   // Fetch surveys data
-  const {
-    data: surveys = [],
-    isLoading,
-    refetch,
-  } = useQuery({
-    queryKey: ["surveys", currentPage, itemsPerPage, filter,filter1, sort, search],
+  const { data: surveys = [], isLoading, refetch } = useQuery({
+    queryKey: ["surveys", currentPage, itemsPerPage, filter, filter1, sort, search, priceRange],
     queryFn: async () => {
       const { data } = await axiosCommon.get("/all-surveys", {
-        params: { page: currentPage, size: itemsPerPage, filter,filter1, sort, search },
+        params: { page: currentPage, size: itemsPerPage, filter, filter1, sort, search, price_range: priceRange },
       });
       return data.surveys;
     },
   });
-
+  
   // Fetch count data
   const { data: countData } = useQuery({
-    queryKey: ["count", filter,filter1, search],
+    queryKey: ["count", filter, filter1, search, priceRange],
     queryFn: async () => {
       const { data } = await axiosCommon.get("/products-count", {
-        params: { filter,filter1, search },
+        params: { filter, filter1, search, price_range: priceRange },
       });
       return data.count;
     },
   });
+  
 
   useEffect(() => {
     if (countData !== undefined) {
@@ -64,7 +63,9 @@ const Products = () => {
     setSort("");
     setSearch("");
     setSearchText("");
+    setPriceRange("");
   };
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -126,6 +127,26 @@ const Products = () => {
               </option>
             </select>
           </div>
+          {/* 3 filter */}
+          <div>
+  <select
+    onChange={(e) => {
+      setPriceRange(e.target.value);
+      setCurrentPage(1);
+    }}
+    value={priceRange}
+    name="price_range"
+    id="price_range"
+    className="border p-4 rounded-lg"
+  >
+    <option value="">Filter By Price Range</option>
+    <option value="0-100">$0 - $100</option>
+    <option value="101-500">$101 - $500</option>
+    <option value="501-1000">$501 - $1000</option>
+    <option value="1001-1600">$1001 - $1600</option>
+  </select>
+</div>
+
 
 
           {/* Search input */}

@@ -20,14 +20,14 @@ const Products = () => {
 
   const axiosCommon = useAxiosCommon();
 
-  // Fetch surveys data
-  const { data: surveys = [], isLoading, refetch } = useQuery({
-    queryKey: ["surveys", currentPage, itemsPerPage, filter, filter1, sort, search, priceRange],
+  // Fetch products data
+  const { data: products = [], isLoading, refetch } = useQuery({
+    queryKey: ["products", currentPage, itemsPerPage, filter, filter1, sort, search, priceRange],
     queryFn: async () => {
-      const { data } = await axiosCommon.get("/all-surveys", {
+      const { data } = await axiosCommon.get("/all-products", {
         params: { page: currentPage, size: itemsPerPage, filter, filter1, sort, search, price_range: priceRange },
       });
-      return data.surveys;
+      return data.products;
     },
   });
   
@@ -201,12 +201,12 @@ const Products = () => {
           </button>
         </div>
 
-        {/* Display surveys */}
+        {/* Display products */}
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {isLoading ? (
             <LoadingSpinner className="text-center h-screen mx-auto block" />
           ) : (
-            surveys.map((product, index) => (
+            products.map((product, index) => (
               <div
                 key={index}
                 className="w-full mt-12 px-8 py-4 rounded-lg bg-gray-800"
